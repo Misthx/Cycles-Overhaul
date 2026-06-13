@@ -1,0 +1,16 @@
+{
+	"color": "#2F3557",
+	"customValues": {},
+	"opponentModeAllowed": false,
+	"difficulties": [
+		"normal",
+		"encore"
+	],
+	"icon": "oushi",
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"displayName": "Cycles",
+	"needsVoices": true,
+	"beatsPerMeasure": 4,
+	"bpm": 159
+}
