@@ -1,8 +1,0 @@
-<!DOCTYPE codename-engine-character>
-<character x="200" y="200" scale="2" icon="oushi" color="#334959" holdTime="6.1">
-	<anim name="idle" anim="i" loop="true"/>
-	<anim name="singLEFT" anim="l" x="115" y="-35"/>
-	<anim name="singDOWN" anim="d" x="40" y="80"/>
-	<anim name="singUP" anim="u" x="-2" y="10"/>
-	<anim name="singRIGHT" anim="r" x="-90" y="-50"/>
-</character>
