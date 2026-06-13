@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Tex-Packer-EX v0.7.1 https://kitzsh.github.io/tex-packer-ex
+-->
+<TextureAtlas imagePath="NotKnuckles_Assets.png" width="2376" height="2075">
+  <SubTexture name="Notknuckles0000.png" x="0" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0001.png" x="396" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0002.png" x="0" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0003.png" x="396" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0004.png" x="792" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0005.png" x="792" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0006.png" x="0" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0007.png" x="396" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0008.png" x="792" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0009.png" x="1188" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0010.png" x="1188" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0011.png" x="1188" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0012.png" x="0" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0013.png" x="396" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0014.png" x="792" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0015.png" x="1188" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0016.png" x="1584" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0017.png" x="1584" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0018.png" x="1584" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0019.png" x="1584" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0020.png" x="0" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0021.png" x="396" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0022.png" x="792" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0023.png" x="1188" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0024.png" x="1584" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0025.png" x="1980" y="0"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0026.png" x="1980" y="415"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0027.png" x="1980" y="830"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0028.png" x="1980" y="1245"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+  <SubTexture name="Notknuckles0029.png" x="1980" y="1660"  width="396" height="415" frameX="-0" frameY="-0" frameWidth="396" frameHeight="415"/>
+</TextureAtlas>

@@ -1,0 +1,4 @@
+<menu name="Extra Options" desc="Some Random Options">
+    <checkbox id="middlescroll" name="Middle Scroll" desc="Activates MiddleScroll"/>
+    <checkbox id="botplay" name="BotPlay" desc="Activates botplay."/>
+</menu>
