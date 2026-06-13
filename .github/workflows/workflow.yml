@@ -1,0 +1,70 @@
+name: File Link To Source Code
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_url:
+        description: 'URL'
+        required: true
+        type: string
+      message:
+        description: 'Message of the commit'
+        required: true
+        type: string
+        
+# Thanks chancexml for making this!
+jobs:
+  download-and-place:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find target directory and download file
+        run: |
+          TARGET_DIR="."
+          while true; do
+            DIR_COUNT=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 -type d ! -name ".*" ! -name "node_modules" | wc -l)
+            DIR_COUNT=$(echo "$DIR_COUNT" | xargs)
+            if [ "$DIR_COUNT" -eq 1 ]; then
+              TARGET_DIR=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 -type d ! -name ".*" ! -name "node_modules" | head -n 1)
+            elif [ "$DIR_COUNT" -ge 2 ]; then
+              break
+            else
+              break
+            fi
+          done
+          
+          CLEAN_URL=$(echo "${{ github.event.inputs.file_url }}" | cut -d? -f1)
+          FILE_NAME=$(basename "$CLEAN_URL")
+          
+          curl -L "${{ github.event.inputs.file_url }}" -o temp_archive.zip
+          
+          if file temp_archive.zip | grep -q "Zip archive" || [[ "$FILE_NAME" == *.zip ]]; then
+            unzip -o temp_archive.zip -d "$TARGET_DIR"
+            rm temp_archive.zip
+            
+            while true; do
+              ITEMS_COUNT=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 ! -name ".*" ! -name "node_modules" | wc -l)
+              ITEMS_COUNT=$(echo "$ITEMS_COUNT" | xargs)
+              
+              if [ "$ITEMS_COUNT" -eq 1 ]; then
+                SINGLE_ITEM=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 ! -name ".*" ! -name "node_modules")
+                if [ -d "$SINGLE_ITEM" ]; then
+                  mv "$SINGLE_ITEM"/* "$SINGLE_ITEM"/.[!.]* "$TARGET_DIR"/ 2>/dev/null || true
+                  rmdir "$SINGLE_ITEM"
+                else
+                  break
+                fi
+              else
+                break
+              fi
+            done
+          else
+            mv temp_archive.zip "$TARGET_DIR/$FILE_NAME"
+          fi
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "${{ github.event.inputs.message }}"
