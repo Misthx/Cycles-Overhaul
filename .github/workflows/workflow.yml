@@ -41,18 +41,18 @@ jobs:
           curl -L "${{ github.event.inputs.file_url }}" -o temp_archive.zip
           
           if file temp_archive.zip | grep -q "Zip archive" || [[ "$FILE_NAME" == *.zip ]]; then
-            unzip -o temp_archive.zip -d "$TARGET_DIR"
+            mkdir -p temp_extracted
+            unzip -o temp_archive.zip -d temp_extracted
             rm temp_archive.zip
             
+            EXTRACT_STAGE="temp_extracted"
             while true; do
-              ITEMS_COUNT=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 ! -name ".*" ! -name "node_modules" | wc -l)
-              ITEMS_COUNT=$(echo "$ITEMS_COUNT" | xargs)
-              
-              if [ "$ITEMS_COUNT" -eq 1 ]; then
-                SINGLE_ITEM=$(find "$TARGET_DIR" -maxdepth 1 -mindepth 1 ! -name ".*" ! -name "node_modules")
+              STAGE_COUNT=$(find "$EXTRACT_STAGE" -maxdepth 1 -mindepth 1 | wc -l)
+              STAGE_COUNT=$(echo "$STAGE_COUNT" | xargs)
+              if [ "$STAGE_COUNT" -eq 1 ]; then
+                SINGLE_ITEM=$(find "$EXTRACT_STAGE" -maxdepth 1 -mindepth 1)
                 if [ -d "$SINGLE_ITEM" ]; then
-                  mv "$SINGLE_ITEM"/* "$SINGLE_ITEM"/.[!.]* "$TARGET_DIR"/ 2>/dev/null || true
-                  rmdir "$SINGLE_ITEM"
+                  EXTRACT_STAGE="$SINGLE_ITEM"
                 else
                   break
                 fi
@@ -60,6 +60,10 @@ jobs:
                 break
               fi
             done
+            
+            mkdir -p "$TARGET_DIR"
+            cp -r "$EXTRACT_STAGE"/* "$EXTRACT_STAGE"/.[!.]* "$TARGET_DIR"/ 2>/dev/null || true
+            rm -rf temp_extracted
           else
             mv temp_archive.zip "$TARGET_DIR/$FILE_NAME"
           fi
